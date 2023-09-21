@@ -1,4 +1,4 @@
-# SaaSMap
+# SaaSMap-server
 <h3>A NodeJS server processing and providing MSP client-user data</h3>
 
 SaaSMap takes data from SaaS Alerts, a platform that aggregates data from various SaaS providers such as Microsoft 365, Google, Slack, etc and provides a basic API for a webclient (a rudimentary NOC monitor) to use.

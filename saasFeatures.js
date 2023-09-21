@@ -73,7 +73,7 @@ const getDb = async (connection) => {
 
 const forceBuild = async (connection) => {
     try {
-        await dbIspBuild(); //locally defined in dbIspBuild.js
+        await dbIspBuild(connection); //locally defined in dbIspBuild.js
         res.send("FORCE BUILD SUCCESSFUL");
     } catch (error) {
         console.log(error);

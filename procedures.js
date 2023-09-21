@@ -2,20 +2,20 @@
 
 const axios = require('axios');
 const mysql = require('mysql2');
-const { apiKey } = require('./apiKeys');
 const dotenv = require('dotenv');
 
 dotenv.config();
+const apiKey = process.env.SAASALERTS_KEY;
 
 //Starts the DB connection.
 const startDbConnection = async () => {
 	try {
 		const pool = await mysql.createPool({
-			host: 'db-mysql-nyc1-16841-do-user-14480294-0.b.db.ondigitalocean.com',
-			port: 25060,
-			user: 'doadmin',
-			password: 'AVNS_cWJMCnEPXzhQ3UFG2Y_',
-			database: 'defaultdb',
+			host: process.env.DB_HOST,
+			port: process.env.DB_PORT,
+			user: process.env.DB_USER,
+			password: process.env.DB_PASSWORD,
+			database: process.env.DB_DB,
 		});
 		const promisePool = pool.promise();
 		console.log('Successfully started DB connection pool.');

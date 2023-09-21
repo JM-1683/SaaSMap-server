@@ -19,7 +19,7 @@ const Server = async () => {
     app.locals.dbConnection = await startDbConnection();
 
     //Enable CORs
-    app.use(cors());
+    app.use(cors()); //kept (unfortunately) open as location of client is not yet settled
 
     initialize(app.locals.dbConnection);
 
